@@ -1,0 +1,77 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+  },
+  "plugins": ["@typescript-eslint/eslint-plugin", "unused-imports"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+  ],
+  "root": true,
+  "env": {
+    "node": true,
+    "jest": true,
+  },
+  "ignorePatterns": [".eslintrc", "node_modules", "dist"],
+  "rules": {
+    // default
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "printWidth": 100,
+      },
+    ],
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+
+    // line padding
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": ["return", "if"],
+      },
+    ],
+
+    // import
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true,
+        },
+        "newlines-between": "always",
+        "groups": ["external", "internal"],
+      },
+    ],
+    "import/no-unresolved": 0,
+    "unused-imports/no-unused-imports": "error",
+    "import/no-named-as-default": 0,
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"],
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "tsconfig.json",
+      },
+    },
+  },
+}

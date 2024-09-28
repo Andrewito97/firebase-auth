@@ -1,0 +1,26 @@
+* {
+  font-family: sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5vw 20vw;
+}
+
+button {
+  padding: 10px;
+  width: fit-content;
+  margin-bottom: 17px;
+}
+
+.user-data-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.user-data-field {
+  display: flex;
+  justify-content: space-between;
+}
